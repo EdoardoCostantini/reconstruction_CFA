@@ -1,8 +1,8 @@
 ### Title:    Subroutine doRep (windows parallelization framework)
-### Project:  Ordinality
+### Project:  Reconstruction CFA
 ### Author:   Edoardo Costantini
-### Created:  2021-06-10
-### Modified: 2021-06-22
+### Created:  2021-06-29
+### Modified: 2021-06-29
 
 ## Make sure we have a clean environment:
 rm(list = ls())

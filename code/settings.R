@@ -1,7 +1,7 @@
 ### Title:    Defining Settings for a run
-### Project:  Ordinality
+### Project:  Reconstruction CFA
 ### Author:   Edoardo Costantini
-### Created:  2021-06-15
+### Created:  2021-06-29
 ### Modified: 2021-06-29
 
 # Empty List

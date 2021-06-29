@@ -1,8 +1,8 @@
 ### Title:    Defining Fixed Parameters
-### Project:  Ordinality
+### Project:  Reconstruction CFA
 ### Author:   Edoardo Costantini
-### Created:  2021-06-10
-### Modified: 2021-06-24
+### Created:  2021-06-29
+### Modified: 2021-06-29
 
 # Packages ----------------------------------------------------------------
 
