@@ -74,16 +74,18 @@ runCell <- function(cond,
 
 # Analysis ----------------------------------------------------------------
 
-
+  disc_atte <- coeffRV(cor(dat_disc), cor(dat_atte))$rv
+  cont_disc <- coeffRV(cor(dat_disc), cor(dat_cont))$rv
+  cont_atte <- coeffRV(cor(dat_atte), cor(dat_cont))$rv
 
 # Store Output ------------------------------------------------------------
 
   ## Define storing object
-  output <- list(cond  = cond,
-                 coefs = coefs,
-                 cors = cors,
-                 r2 = r2,
-                 mses = mses)
+  output <- data.frame(cond,
+                       disc_atte = disc_atte,
+                       cont_disc = cont_disc,
+                       cont_atte = cont_atte
+  )
 
   ## Return it
   saveRDS(output,
