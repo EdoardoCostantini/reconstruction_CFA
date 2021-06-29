@@ -19,7 +19,7 @@
 # Load Results ----------------------------------------------------------
 
   inDir <- "../output/"
-  runName <- "20210629_165424"
+  runName <- "20210629_170139"
 
   # Read output
   gg_shape <- readRDS(paste0(inDir, runName, "_res.rds"))
