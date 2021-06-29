@@ -42,11 +42,22 @@
 
   # Data generation
   parms$N <- 1e3 # sample size
-  parms$P <- 50 # number of variables
+  parms$L <- 8 # number of latent variables
+  parms$J <- 3 # number of measured items for latent variable
+  parms$P <- parms$L*parms$J # number of observed items
+  parms$fl <- .8 # factor loadings level
+  parms$lv_mean   <- 0 # true latent mean
+  parms$lv_var    <- 1 # true latent variance
+  parms$lv_cov_ta <- .8 # true latent cov for target variables
+  parms$lv_cov_mp <- .8 # for mar predictors
+  parms$lv_cov_ax <- .8 # for auxiliary set
   parms$item_mean <- 0 # true item mean
   parms$item_var  <- 1 # true item variance
   parms$item_cor  <- .8 # true item variance
-
+  parms$varMap <- list(ta = 1:2,  # TArget of analysis
+                       mp = 3:5, # Mar Predictors
+                       ax = 6:parms$L # Auxiliary variables
+  )
   # Analysis
   parms$npcs <- 1
 
