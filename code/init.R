@@ -34,7 +34,7 @@
   parms    <- list()
 
   # Generic
-  parms$dt_rep <- 1e3
+  parms$dt_rep <- 10
 
   # Seed related
   parms$seed <- 2021

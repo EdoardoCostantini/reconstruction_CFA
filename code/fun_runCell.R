@@ -74,17 +74,33 @@ runCell <- function(cond,
 
 # Analysis ----------------------------------------------------------------
 
-  disc_atte <- coeffRV(cor(dat_disc), cor(dat_atte))$rv
-  cont_disc <- coeffRV(cor(dat_disc), cor(dat_cont))$rv
-  cont_atte <- coeffRV(cor(dat_atte), cor(dat_cont))$rv
+  # Covariance Matrices
+  cor_cont <- cor(dat_cont)
+  cor_disc <- cor(dat_disc)
+  cor_atte <- cor(dat_atte)
+
+  # RV coefficient
+  RV_disc_atte <- coeffRV(cor_disc, cor_atte)$rv
+  RV_cont_disc <- coeffRV(cor_cont, cor_disc)$rv
+  RV_cont_atte <- coeffRV(cor_cont, cor_atte)$rv
+
+  d1_disc <- sum(abs(cor_disc - cor_cont))
+  d1_atte <- sum(abs(cor_atte - cor_cont))
+  d2_disc <- sqrt(sum((cor_disc - cor_atte)^2))
+  d2_atte <- sqrt(sum((cor_atte - cor_cont)^2))
+
 
 # Store Output ------------------------------------------------------------
 
   ## Define storing object
   output <- data.frame(cond,
-                       disc_atte = disc_atte,
-                       cont_disc = cont_disc,
-                       cont_atte = cont_atte
+                       RV_disc_atte = RV_disc_atte,
+                       RV_cont_disc = RV_cont_disc,
+                       RV_cont_atte = RV_cont_atte,
+                       d1_disc = d1_disc,
+                       d1_atte = d1_atte,
+                       d2_disc = d2_disc,
+                       d2_atte = d2_atte
   )
 
   ## Return it
